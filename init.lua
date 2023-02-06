@@ -22,7 +22,7 @@ vim.keymap.set('n', '<C-w>|', cmd 'WindowsMaximizeHorizontally')
 vim.keymap.set('n', '<C-w>=', cmd 'WindowsEqualize')
 
 
-vim.o.relativenumber = true
+vim.cmd('set number relativenumber')
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
