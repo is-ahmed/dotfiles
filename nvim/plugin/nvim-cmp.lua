@@ -79,4 +79,7 @@ local cmp = require'cmp'
   require('lspconfig')['gopls'].setup {
     capabilities = capabilities
   }
+  require('lspconfig')['bashls'].setup {
+    capabilities = capabilities
+  }
 
