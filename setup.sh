@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Optionally install nerd fonts if needed
-dotfiles="$HOME/dotifles"
+myconfig="$HOME/myconfig"
 option='n'
 
 echo "Install ryanoasis/nerd-fonts? (y/n)"
@@ -16,8 +16,8 @@ else
 fi
 
 
-ln -s ${dotfiles}/nvim ~/.config/
-ln -s ${dotfiles}/tmux/.tmux.conf ~/
+ln -s ${myconfig}/nvim ~/.config/
+ln -s ${myconfig}/tmux/.tmux.conf ~/
 
 
 
