@@ -140,4 +140,11 @@ return require('packer').startup(function()
 	      require('windows').setup()
 	   end
 	}
+
+	use {
+		"chentoast/marks.nvim",
+		config = function()
+			require('marks').setup()
+		end
+	}
 end)
