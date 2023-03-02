@@ -21,6 +21,10 @@ vim.keymap.set('n', '<C-w>_', cmd 'WindowsMaximizeVertically')
 vim.keymap.set('n', '<C-w>|', cmd 'WindowsMaximizeHorizontally')
 vim.keymap.set('n', '<C-w>=', cmd 'WindowsEqualize')
 
+vim.api.nvim_set_keymap('n', '<leader>sh', ':Gitsigns stage_hunk<cr>', {})
+vim.api.nvim_set_keymap('n', '<leader>uh', ':Gitsigns undo_stage_hunk<cr>', {})
+vim.api.nvim_set_keymap('n', '<leader>ph', ':Gitsigns preview_hunk<cr>', {})
+vim.api.nvim_set_keymap('n', '<leader>rh', ':Gitsigns reset_hunk<cr>', {})
 
 vim.cmd('set number relativenumber')
 
