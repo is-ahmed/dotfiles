@@ -16,6 +16,8 @@ else
 	echo "Nerd fonts will not be installed"
 fi
 
+rm ~/.config/nvim
+rm ~/.tmux.conf
 
 ln -s ${myconfig}/nvim ~/.config/
 ln -s ${myconfig}/tmux/.tmux.conf ~/
