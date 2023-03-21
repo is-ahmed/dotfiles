@@ -85,4 +85,7 @@ local cmp = require'cmp'
   require('lspconfig')['asm_lsp'].setup {
     capabilities = capabilities
   }
+  require('lspconfig')['tsserver'].setup {
+    capabilities = capabilities
+  }
 
