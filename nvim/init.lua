@@ -27,6 +27,8 @@ vim.api.nvim_set_keymap('n', '<leader>ph', ':Gitsigns preview_hunk<cr>', {})
 vim.api.nvim_set_keymap('n', '<leader>rh', ':Gitsigns reset_hunk<cr>', {})
 
 vim.cmd('set number relativenumber')
+vim.keymap.set("x", "p", function() return 'pgv"' .. vim.v.register .. "y" end, { remap = false, expr = true })
+vim.keymap.set("x", "d", "\"_d", {})
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
