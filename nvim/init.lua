@@ -3,6 +3,7 @@ vim.g.mapleader = " "
 vim.api.nvim_set_keymap('i', 'jk', '<ESC>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>sf', ':w<cr>', {})
 vim.api.nvim_set_keymap('n', '<leader>tt', ':ToggleTerm direction=float<cr>', {})
+vim.api.nvim_set_keymap('n', '<leader>tf', ':ToggleTerm dir=%:p:h direction=float<cr>', {})
 vim.api.nvim_set_keymap('n', '<leader>er', ':TroubleToggle<cr>', {})
 vim.api.nvim_set_keymap('n', '<leader>ss', ':SessionSave<cr>', {})
 vim.api.nvim_set_keymap('n', '<leader>sl', ':SessionLoad<cr>', {})
@@ -36,6 +37,19 @@ vim.keymap.set("x", "d", "\"_d", {})
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
+
+vim.api.nvim_create_autocmd({ "VimLeave" }, {
+  callback = function()
+    vim.cmd('!notify-send  ""')
+    vim.cmd('sleep 10m')
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "VimLeave" }, {
+  callback = function()
+    vim.fn.jobstart('notify-send ""', {detach=true})
+  end,
+})
 
 require('packer-plugins')
 
