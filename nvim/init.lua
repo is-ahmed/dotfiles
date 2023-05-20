@@ -32,6 +32,8 @@ vim.api.nvim_set_keymap('n', '<leader>N', ':Gitsigns prev_hunk<cr>', {})
 
 
 vim.cmd('set number relativenumber')
+vim.cmd('set smartcase')
+vim.cmd('set ignorecase')
 vim.keymap.set("x", "p", function() return 'pgv"' .. vim.v.register .. "y" end, { remap = false, expr = true })
 vim.keymap.set("x", "d", "\"_d", {})
 
