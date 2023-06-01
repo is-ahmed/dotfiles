@@ -105,4 +105,7 @@ local cmp = require'cmp'
   require('lspconfig')['tailwindcss'].setup {
     capabilities = capabilities
   }
+  require('lspconfig')['jsonls'].setup {
+    capabilities = capabilities
+  }
 
