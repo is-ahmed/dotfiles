@@ -21,6 +21,7 @@ rm ~/.tmux.conf
 
 ln -s ${myconfig}/nvim ~/.config/
 ln -s ${myconfig}/tmux/.tmux.conf ~/
+ln -s ${myconfig}/zsh/.zshrc ~/
 
 
 
