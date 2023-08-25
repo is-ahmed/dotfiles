@@ -23,6 +23,12 @@ ln -s ${myconfig}/nvim ~/.config/
 ln -s ${myconfig}/tmux/.tmux.conf ~/
 ln -s ${myconfig}/zsh/.zshrc ~/
 
+# Additional notes for setting up the config (for myself)
+# For telescope fuzzy finding, make sure ripgrep is installed
+# Make sure packer is separately installed first
+# For zsh plugins, install plugins to ~/.config/zsh before sourcing
+#
+
 
 
 
