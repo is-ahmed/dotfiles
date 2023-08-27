@@ -27,7 +27,7 @@ ln -s ${myconfig}/zsh/.zshrc ~/
 # For telescope fuzzy finding, make sure ripgrep is installed
 # Make sure packer is separately installed first
 # For zsh plugins, install plugins to ~/.config/zsh before sourcing
-#
+# For tree-sitter, make sure to run :TSInstall all
 
 
 
