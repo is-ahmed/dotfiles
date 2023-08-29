@@ -1,33 +1,60 @@
 #!/bin/sh
 
-# Optionally install nerd fonts if needed
-myconfig="$HOME/myconfig"
-option='n'
 
-echo "Install ryanoasis/nerd-fonts? (y/n)"
-read option
+my_config="$HOME/myconfig"
 
-if [[ "$option" == 'y' ]]
+# Install packer if not present
+PACKER_DIR=~/.local/share/nvim/site/pack/packer/start/packer.nvim/.git
+if [ ! -d $PACKER_DIR ]
 then
-	echo "Nerd fonts will be installed"
-	mkdir -p ~/.local/share/fonts
-	cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
-else
-	echo "Nerd fonts will not be installed"
+	git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+	~/.local/share/nvim/site/pack/packer/start/packer.nvim
 fi
 
-rm ~/.config/nvim
-rm ~/.tmux.conf
+# Copy neovim plugins to ~/.local/share/nvim
+#cp ./.local/share/nvim ~/.local/share/nvim
 
-ln -s ${myconfig}/nvim ~/.config/
-ln -s ${myconfig}/tmux/.tmux.conf ~/
-ln -s ${myconfig}/zsh/.zshrc ~/
+# Install tpm if not present
+TPM_DIR="~/.tmux/plugins/tpm/.git"
+if [ ! -d $TPM_DIR ]
+then
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
+
+# Install zsh plugins
+PLUGINS=(
+"git@github.com:zsh-users/zsh-history-substring-search.git"
+"git@github.com:zsh-users/zsh-syntax-highlighting.git"
+"git@github.com:zsh-users/zsh-autosuggestions.git"
+"git@github.com:romkatv/powerlevel10k.git"
+)
+
+for repo in "${PLUGINS[@]}"
+do
+	base_name=$(basename $repo)
+	file_name=${base_name%.*}
+	download_path="~/.config/zsh/$file_name"
+	if [ ! -d download_path ]
+	then
+		git clone $repo ~/.config/zsh/$file_name
+	fi
+done
+
+# Install ripgrep for telescope fuzzy finding
+sudo apt update && sudo apt install ripgrep -y
+
+
+ln -s ${my_config}/nvim ~/.config/
+ln -s ${my_config}/tmux/.tmux.conf ~/
+ln -s ${my_config}/zsh/.zshrc ~/
+
+source ~/.tmux.conf
+source ~/.zshrc 
 
 # Additional notes for setting up the config (for myself)
-# For telescope fuzzy finding, make sure ripgrep is installed
-# Make sure packer is separately installed first
-# For zsh plugins, install plugins to ~/.config/zsh before sourcing
 # For tree-sitter, make sure to run :TSInstall all
+# 
 
 
 
