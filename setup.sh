@@ -3,7 +3,7 @@
 
 my_config="$HOME/myconfig"
 
-# Install packer if not present
+# Install packer if not present, make sure Github keys are setup
 PACKER_DIR=~/.local/share/nvim/site/pack/packer/start/packer.nvim/.git
 if [ ! -d $PACKER_DIR ]
 then
@@ -54,7 +54,7 @@ source ~/.zshrc
 
 # Additional notes for setting up the config (for myself)
 # For tree-sitter, make sure to run :TSInstall all
-# 
+# Also may need to comment some stuff in nvim config to install plugin
 
 
 
