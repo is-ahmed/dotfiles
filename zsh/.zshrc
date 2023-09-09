@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Created by newuser for 5.9
-
+setopt hist_ignore_all_dups
 export PATH=$PATH:/usr/local/go/bin
 
 alias nvim="$HOME/AppImages/nvim.appimage"
