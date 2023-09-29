@@ -11,6 +11,9 @@ export PATH=$PATH:/usr/local/go/bin
 
 alias nvim="$HOME/AppImages/nvim.appimage"
 alias ls="ls --color"
+alias teach="ssh ahmedi25@teach.cs.toronto.edu"
+alias passuoft="pass uoft-teaching-labs/password | xclip -selection c"
+alias passgithub="pass Github/password | xclip -selection c"
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
