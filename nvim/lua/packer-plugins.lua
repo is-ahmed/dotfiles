@@ -42,6 +42,11 @@ return require('packer').startup(function()
 	  end
 	}
 
+	use { "ibhagwan/fzf-lua",
+		 -- optional for icon support
+		requires = { "nvim-tree/nvim-web-devicons" }
+	}
+
 	-- Terminal Wrapper
 	use {"akinsho/toggleterm.nvim", tag = '*', config = function()
 		require("toggleterm").setup()

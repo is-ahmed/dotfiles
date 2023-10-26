@@ -8,12 +8,14 @@ vim.api.nvim_set_keymap('n', '<leader>er', ':TroubleToggle<cr>', {})
 vim.api.nvim_set_keymap('n', '<leader>ss', ':SessionSave<cr>', {})
 vim.api.nvim_set_keymap('n', '<leader>sl', ':SessionLoad<cr>', {})
 vim.api.nvim_set_keymap('n', '<leader>bc', ':BufferClose<cr>', {})
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.api.nvim_set_keymap('n', '<leader>fd', ':Telescope find_files cwd=%:p:h<cr>', {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+vim.keymap.set("n", "<leader>ff",
+  "<cmd>lua require('fzf-lua').files()<CR>", { silent = true })
+vim.keymap.set("n", "<leader>fg",
+  "<cmd>lua require('fzf-lua').grep_project()<CR>", { silent = true })
+vim.keymap.set("n", "<leader>fc",
+  "<cmd>lua require('fzf-lua').grep_curbuf()<CR>", { silent = true })
+vim.keymap.set("n", "<leader>fs",
+  "<cmd>lua require('fzf-lua').git_status()<CR>", { silent = true })
 local function cmd(command)
    return table.concat({ '<Cmd>', command, '<CR>' })
 end
