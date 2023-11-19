@@ -152,4 +152,7 @@ return require('packer').startup(function()
 			require('marks').setup()
 		end
 	}
+	use {
+	    "windwp/nvim-ts-autotag",
+	}
 end)

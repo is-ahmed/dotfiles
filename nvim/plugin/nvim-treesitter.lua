@@ -8,3 +8,10 @@ parser_config.org = {
   filetype = 'org',
 }
 
+require'nvim-treesitter.configs'.setup {
+  autotag = {
+    enable = true,
+  }
+}
+
+
