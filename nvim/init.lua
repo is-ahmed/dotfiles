@@ -17,6 +17,8 @@ vim.keymap.set("n", "<leader>fc",
 vim.keymap.set("n", "<leader>fs",
   "<cmd>lua require('fzf-lua').git_status()<CR>", { silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fb', ':FzfLua buffers<cr>', {})
+vim.api.nvim_set_keymap('n', '<leader>fr', ':FzfLua resume<cr>', {})
+vim.api.nvim_set_keymap('n', '<leader>fm', ':FzfLua marks<cr>', {})
 local function cmd(command)
    return table.concat({ '<Cmd>', command, '<CR>' })
 end
