@@ -8,6 +8,10 @@ fi
 # Created by newuser for 5.9
 setopt hist_ignore_all_dups
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/racket/bin
+export ANDROID_HOME="/home/isahmed/Android/Sdk"
+export adb="/home/isahmed/Android/Sdk/platform-tools/adb"
+export LLVM_CONFIG_PATH=llvm-config-14 cargo install c2rust
 
 alias nvim="$HOME/AppImages/nvim.appimage"
 alias ls="ls --color"
@@ -25,3 +29,5 @@ export NVM_DIR="$HOME/.nvm"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[ -f "/home/isahmed/.ghcup/env" ] && source "/home/isahmed/.ghcup/env" # ghcup-env

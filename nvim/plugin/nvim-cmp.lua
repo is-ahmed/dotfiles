@@ -108,4 +108,7 @@ local cmp = require'cmp'
   require('lspconfig')['jsonls'].setup {
     capabilities = capabilities
   }
+  require('lspconfig')['hls'].setup {
+    capabilities = capabilities
+  }
 
