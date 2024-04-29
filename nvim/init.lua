@@ -54,6 +54,9 @@ vim.cmd('set ignorecase')
 vim.keymap.set("x", "p", function() return 'pgv"' .. vim.v.register .. "y" end, { remap = false, expr = true })
 vim.keymap.set("x", "d", "\"_d", {})
 
+vim.keymap.set({ 'n' }, '<C-k>', function() require('lsp_signature').toggle_float_win()
+    end, { silent = true, noremap = true, desc = 'toggle signature' })
+
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4

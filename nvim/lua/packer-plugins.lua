@@ -70,6 +70,10 @@ return require('packer').startup(function()
 	 'hrsh7th/vim-vsnip',
 	}
 
+	use {
+	 'ray-x/lsp_signature.nvim',
+	}
+
 	-- Autopairs
 	use {
 	    "windwp/nvim-autopairs",
