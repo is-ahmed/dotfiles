@@ -71,6 +71,10 @@ return require('packer').startup(function()
 	}
 
 	use {
+		"nvim-pack/nvim-spectre"
+	}
+
+	use {
 	 'ray-x/lsp_signature.nvim',
 	}
 

@@ -35,6 +35,19 @@ vim.keymap.set('n', '<C-w>_', cmd 'WindowsMaximizeVertically')
 vim.keymap.set('n', '<C-w>|', cmd 'WindowsMaximizeHorizontally')
 vim.keymap.set('n', '<C-w>=', cmd 'WindowsEqualize')
 
+vim.keymap.set('n', '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', {
+    desc = "Toggle Spectre"
+})
+vim.keymap.set('n', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
+    desc = "Search current word"
+})
+vim.keymap.set('v', '<leader>sw', '<esc><cmd>lua require("spectre").open_visual()<CR>', {
+    desc = "Search current word"
+})
+vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
+    desc = "Search on current file"
+})
+
 vim.api.nvim_set_keymap('n', '<leader>sh', ':Gitsigns stage_hunk<cr>', {})
 vim.api.nvim_set_keymap('n', '<leader>sb', ':Gitsigns stage_buffer<cr>', {})
 vim.api.nvim_set_keymap('n', '<leader>uh', ':Gitsigns undo_stage_hunk<cr>', {})
