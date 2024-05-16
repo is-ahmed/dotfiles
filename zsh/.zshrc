@@ -14,6 +14,7 @@ export adb="/home/isahmed/Android/Sdk/platform-tools/adb"
 export LLVM_CONFIG_PATH=llvm-config-14 cargo install c2rust
 
 alias nvim="$HOME/AppImages/nvim.appimage"
+alias magick="$HOME/AppImages/magick"
 alias ls="ls --color"
 alias teach="ssh ahmedi25@teach.cs.toronto.edu"
 alias passuoft="pass uoft-teaching-labs/password | xclip -selection c"

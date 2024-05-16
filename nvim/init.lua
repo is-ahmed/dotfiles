@@ -5,6 +5,18 @@ vim.api.nvim_set_keymap('n', '<leader>sf', ':w<cr>', {})
 vim.api.nvim_set_keymap('n', '<leader>tt', ':ToggleTerm direction=float<cr>', {})
 vim.api.nvim_set_keymap('n', '<leader>tf', ':ToggleTerm dir=%:p:h direction=float<cr>', {})
 vim.api.nvim_set_keymap('n', '<leader>er', ':TroubleToggle<cr>', {})
+
+vim.keymap.set("n", "<leader>ed", function() require("trouble").toggle("document_diagnostics") end)
+vim.keymap.set("n", "<leader>eq", function() require("trouble").toggle("quickfix") end)
+vim.keymap.set("n", "<leader>gr", function() require("trouble").toggle("lsp_references") end)
+vim.keymap.set("n", "<leader>gd", function() require("trouble").toggle("lsp_definitions") end)
+vim.keymap.set("n", "<leader>gt", function() require("trouble").toggle("lsp_type_definitions") end)
+
+vim.keymap.set("n", "<leader>en", function() require("trouble").next({skip_groups = true, jump = true}) end)
+vim.keymap.set("n", "<leader>ep", function() require("trouble").previous({skip_groups = true, jump = true}) end)
+vim.keymap.set("n", "<leader>ef", function() require("trouble").first({skip_groups = true, jump = true}) end)
+vim.keymap.set("n", "<leader>el", function() require("trouble").last({skip_groups = true, jump = true}) end)
+
 vim.api.nvim_set_keymap('n', '<leader>ss', ':SessionSave<cr>', {})
 vim.api.nvim_set_keymap('n', '<leader>sl', ':SessionLoad<cr>', {})
 vim.api.nvim_set_keymap('n', '<leader>bc', ':BufferClose<cr>', {})
@@ -93,6 +105,25 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt.formatoptions:remove({"c", "r", "o"})
 	end
 })
+
+-- ~/.config/nvim/after/ftplugin/haskell.lua
+local ht = require('haskell-tools')
+local bufnr = vim.api.nvim_get_current_buf()
+local opts = { noremap = true, silent = true, buffer = bufnr, }
+-- haskell-language-server relies heavily on codeLenses,
+-- so auto-refresh (see advanced configuration) is enabled by default
+vim.keymap.set('n', '<space>cl', vim.lsp.codelens.run, opts)
+-- Hoogle search for the type signature of the definition under the cursor
+vim.keymap.set('n', '<space>hs', ht.hoogle.hoogle_signature, opts)
+-- Evaluate all code snippets
+vim.keymap.set('n', '<space>ea', ht.lsp.buf_eval_all, opts)
+-- Toggle a GHCi repl for the current package
+vim.keymap.set('n', '<leader>rr', ht.repl.toggle, opts)
+-- Toggle a GHCi repl for the current buffer
+vim.keymap.set('n', '<leader>rf', function()
+  ht.repl.toggle(vim.api.nvim_buf_get_name(0))
+end, opts)
+vim.keymap.set('n', '<leader>rq', ht.repl.quit, opts)
 
 require('packer-plugins')
 

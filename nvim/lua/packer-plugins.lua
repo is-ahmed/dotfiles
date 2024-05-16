@@ -78,6 +78,10 @@ return require('packer').startup(function()
 	 'ray-x/lsp_signature.nvim',
 	}
 
+	use {
+		'mrcjkb/haskell-tools.nvim',
+	}
+
 	-- Autopairs
 	use {
 	    "windwp/nvim-autopairs",
