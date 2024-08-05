@@ -6,6 +6,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Created by newuser for 5.9
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=1000
+setopt APPEND_HISTORY # Don't erase history
+setopt HIST_FIND_NO_DUPS # Don't show duplicates in search
+setopt HIST_IGNORE_SPACE # Don't preserve spaces. You may want to turn it off
+setopt NO_HIST_BEEP # Don't beep
+setopt INC_APPEND_HISTORY_TIME
 setopt hist_ignore_all_dups
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/usr/racket/bin
