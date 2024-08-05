@@ -105,6 +105,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt.formatoptions:remove({"c", "r", "o"})
 	end
 })
+vim.o.mousemovement = true
 
 -- ~/.config/nvim/after/ftplugin/haskell.lua
 local ht = require('haskell-tools')

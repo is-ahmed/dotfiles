@@ -73,7 +73,9 @@ return require('packer').startup(function()
 	use {
 		"nvim-pack/nvim-spectre"
 	}
-
+	use {
+		"soulis-1256/eagle.nvim"
+	}
 	use {
 	 'ray-x/lsp_signature.nvim',
 	}
