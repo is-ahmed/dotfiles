@@ -16,7 +16,7 @@ setopt NO_HIST_BEEP # Don't beep
 setopt INC_APPEND_HISTORY_TIME
 setopt hist_ignore_all_dups
 export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:/usr/racket/bin
+export PATH=$PATH:/usr/racket/bin:$HOME/bin
 export ANDROID_HOME="/home/isahmed/Android/Sdk"
 export adb="/home/isahmed/Android/Sdk/platform-tools/adb"
 export LLVM_CONFIG_PATH=llvm-config-14 cargo install c2rust
@@ -31,6 +31,7 @@ source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
+source "$HOME/myconfig/zsh/fzf-git.sh"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
